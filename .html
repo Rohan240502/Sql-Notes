@@ -84,6 +84,26 @@ select * from users where gender = "Female" and salary >"65000" order by date_of
 
 select * from users where gender = "Female" and salary > 70000 LIMIT 5;
 
+-- 11. Update statemnets -- -- AND ALWAYS USE "WHERE" CLAUSE SO THE DATA NOT GET MESSED UP.
+
+UPDATE users set salary = 45000 where id = 1;
+UPDATE users set salary = 45000 , email = "aarav@aarav.com" where id = 1;
+UPDATE users set salary = "70000" where id = 5;
+
+UPDATE users set name = "Aisha Khan" where email = "aisha@example.com";
+
+UPDATE users set salary= salary+10000 where id and salary < 60000; -- IMPORTANT FOCUS ON THESE "    
+UPDATE users set gender = "Other" where id and name = "Ishaan";
+select * from users;
+
+
+-- 12 . Deletion operation --
+
+DELETE from users where id and salary < 70000;
+DELETE from users where id = 2;
+select * from users;
+
+
 
 
 
