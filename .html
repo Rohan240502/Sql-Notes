@@ -1,7 +1,5 @@
-<!-- 1. Important queries the sql query : -->
-
-create database "tablename";
-USE "tablename";
+create database samplesql;
+USE samplesql;
 create table user(
 id int auto_increment primary key,
 name varchar(100) not null,
@@ -10,5 +8,55 @@ gender enum('Male','Female','Other'),
 date_of_birth Date,
 created_at timestamp default current_timestamp
 );
+-- select * from user;
+-- rename table user to programmers;
+-- select * from programmers;
+-- rename table programmers to user;
+
+-- -- ALTER TABLE user add column is_active BOOLEAN DEFAULT true;
+-- -- ALTER TABLE user drop column is_active;
+-- alter table user modify column email varchar(100) after id;
+
+INSERT INTO user (name , email, gender ,date_of_birth) values
+-- ('Alice1','bob@gmail.com','Male','2002-05-24'), 
+-- ('Alice2','alice4@gmail.com','Male','2002-05-24'),
+-- ('Alice3','alice7@gmail.com','Male','2002-05-24'),
+-- ('Alice4','alice11@gmail.com','Male','2002-05-24');
+('Rohan','rys122344@gmail.com','Male','2002-06-03'),
+('Rohan','rys122344@gmail1.com','Male','2002-05-01'),
+('Rohan','rys122344@gmail2.com','Male','2002-09-21'),
+('Rohan3','rys122344@gmail3.com','Male','2002-05-24');
+
+-- select * from user;-- 
+
+-- 2. The below query is used to change the position of the column
+
+-- ALTER table user modify column email varchar(100) First;
+-- select * from user
+
+-- ALTER TABLE user modify column gender enum('Male','Female','Others') after id;
+-- select * from user;
+
+-- select * from user where email='rys122344@gmail3.com' AND date_of_birth='2002-05-24';
+
+-- 3. Inserting new columns by Specifying them.
+
+-- INSERT INTO user (name , email , gender , date_of_birth) values
+-- ('Aman','aman@gmail.com','Male','2007-12-23');
+-- select * from user;
+
+ 
+ -- 4. Inserting multiple columns at a time.alter
+
+INSERT INTO user (name, email , gender , date_of_birth) values
+('Angad','angad@gmail.com','Female','2008-02-22'),
+('Yash','yash@gmail.com','Others','2003-11-25');
 select * from user;
+
+
+
+
+ 
+ 
+
 
