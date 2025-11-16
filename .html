@@ -226,7 +226,27 @@ select * from users;
  
 
 
- 
+ -- 17.Self Joint 
+
+-- select * from users;
+
+-- ALTER TABLE users
+-- add column referred_by_id INT; 
+-- update users set referred_by_id = 1 where id in (3,5,7,9);
+-- update users set referred_by_id = 2 where id = 4;
+-- select * from users;
+
+
+-- Self joint syntax
+
+-- select 
+-- a.id,
+-- a.name as user_name,
+-- b.name as referred_by
+-- from users a
+-- INNER JOIN users b on a.referred_by_id = b.id;
+
+-- select * from users;
  
 
 
