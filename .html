@@ -158,9 +158,72 @@ from users;
 
 
 
-## Seprately added queries for Foreignkey in foreignkey.sql file.
+## 14. Seprately added queries for Foreignkey in foreignkey.sql file.
 
 
+15. Jionts
+-- -- a. Inner Joint
+-- select users.name ,users.gender, addresses.city , addresses.state, addresses.street , addresses.id as addresses_id
+-- from users
+-- inner join addresses on users.id = addresses.user_id;
+
+
+-- -- b . Left Joint
+
+-- select users.name ,users.gender, addresses.city , addresses.state, addresses.street , addresses.id as addresses_id
+-- from users
+-- Left join addresses on users.id = addresses.user_id;
+
+-- -- c. Right Joint
+
+-- select users.name ,users.gender, addresses.city , addresses.state, addresses.street , addresses.id as addresses_id
+-- from users
+-- Right join addresses on users.id = addresses.user_id;
+
+
+-- 16. SQL UNION and UNION ALL
+use startersql;
+CREATE TABLE admin_users (
+id INT PRIMARY KEY,
+ name VARCHAR(100),
+ email VARCHAR(100),
+ gender ENUM('Male', 'Female', 'Other'),
+ date_of_birth DATE,
+ salary INT
+);
+
+INSERT INTO admin_users (id, name, email, gender, date_of_birth, salary) VALUES
+(101, 'Anil Kumar', 'anil@example.com', 'Male', '1985-04-12', 60000),
+(102, 'Pooja Sharma', 'pooja@example.com', 'Female', '1992-09-20', 58000),
+(103, 'Rakesh Yadav', 'rakesh@example.com', 'Male', '1989-11-05', 54000),
+(104, 'Fatima Begum', 'fatima@example.com', 'Female', '1990-06-30', 62000);
+
+
+select * from admin_users;
+select * from users;
+ 
+ -- For Union (Used to removes duplicates by default.)
+ select email , name  from users
+ Union
+ select email , name from admin_users;
+ 
+ -- For Union All (used to return all the similar entity one after other)
+ select name, email from users
+ Union all
+ select name, email from admin_users;
+ 
+ -- Using Order By in Union
+ select name, email, date_of_birth from users
+ Union
+ select name, email, date_of_birth from admin_users
+ Order by date_of_birth;
+ 
+ 
+ -- Imp Queries 
+ select email , name , 'user' as Role from users
+ Union
+ select email ,name ,'admin' as Role_name from admin_users;
+ 
 
 
  
