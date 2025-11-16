@@ -33,3 +33,6 @@ VALUES
 (18, '11 North Usman Road', 'Chennai', 'Tamil Nadu', '600017'),
 (19, '33 Residency Road', 'Bengaluru', 'Karnataka', '560025'),
 (20, '22 Hazratganj', 'Lucknow', 'Uttar Pradesh', '226001');
+
+
+select * from addresses
