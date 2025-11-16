@@ -103,6 +103,59 @@ DELETE from users where id and salary < 70000;
 DELETE from users where id = 2;
 select * from users;
 
+-- 13. Aggreghate Functions --
+
+-- a. counting the entity in tables
+
+select count(*) from users;
+select count(*) from users where gender = "Female";
+
+-- b. Min & Max calculation 
+
+select MIN(salary) AS Min_Salary , MAX(salary) as Max_Salary from users;
+
+-- c. Sum 
+select sum(salary) as salary_rohan from users;
+select gender , sum(salary) as salary_yadav from users group by gender;
+
+-- d. AVG 
+select avg(salary) as AVG_Salary from users;
+select gender , avg(salary) as AVG_Salary from users group by gender;
+
+-- e, Lenght
+select name,length(name) as name_len from users;
+
+-- f. Lower case & Upper case
+select name , lower(name ) as low_name from users;
+select name , upper(name) as Upp_name from users;
+
+-- g . Some complex queries using concatination --
+
+select name , Lower(name) as low_name , concat(lower(name) ,"12345") as username,  length(name) as name_len from users;
+
+-- " now" it is used to show the current time --
+select name , Lower(name) as low_name , concat(lower(name) ,"12345") as username, now() as time from users;
+
+select name , Lower(name) as low_name , concat(lower(name) ,"12345") as username, year(now()) as time from users;
+
+select name , Lower(name) as low_name , concat(lower(name) ,"12345") as username, year(date_of_birth) as yob from users;
+
+select name , Lower(name) as low_name , concat(lower(name) ,"12345") as username, day(now()) as DAY from users;
+
+select name , Lower(name) as low_name , concat(lower(name) ,"12345") as username, Month(now()) as Month from users;
+
+select name , DATEDIFF(curdate(), date_of_birth) as days from users;
+
+-- h. Mod function
+
+select id , mod(id,2 ) as remainder from users;
+
+-- i . If ()
+
+select name , gender ,
+			if ( gender = "Female" ,"Yes", "No") as is_female
+from users;
+
 
 
 
