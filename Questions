@@ -20,6 +20,7 @@ Write a query to find the names of the top 3 distinct players by highest score w
 
 Table 1: Players
 
+
 player_id 	player_name	 score	rank
 1	            Alice	     1200	    5
 2	            Bob	       1500	    2
@@ -57,3 +58,10 @@ JOIN Players p
     ON m.winner = p.player_name
 ORDER BY m.match_date DESC, p.score DESC
 LIMIT 5;
+
+Question 5 .Query a list of CITY names from STATION for cities that have an even ID number. Print the results in any order, but exclude duplicates from the answer.
+The STATION table is described as follows:
+
+Query : SELECT DISTINCT CITY
+FROM STATION
+WHERE MOD(ID , 2)=0;
